@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline.astro';
+import { education, experiences, profile, skillGroups } from '../data/profile';
+---
+
+<BaseLayout
+  title="Resume | Sina Tavakoli"
+  description="General technical profile of Sina Tavakoli across software systems, data workflows, analytics, applied machine learning, and AI-enabled products."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="eyebrow">Resume</p>
+      <h1 class="section-title">technical profile.</h1>
+      <p class="section-lede">
+        Cross-functional engineer with experience across software systems, data workflows, analytical
+        reporting, cloud-oriented delivery, machine learning experiments, and AI-enabled applications.
+        This profile is intentionally broad so it aligns with software, backend, data, analytics,
+        data science, and ML/AI resume versions.
+      </p>
+      <div class="button-row">
+        <a class="btn" href={`mailto:${profile.email}`}>Email Sina</a>
+        <a class="btn secondary" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container resume-grid">
+      <aside class="resume-side">
+        <article class="card side-card">
+          <h2>Contact</h2>
+          <p>{profile.location}</p>
+          <p><a href={`mailto:${profile.email}`}>{profile.email}</a></p>
+          <p>{profile.phone}</p>
+          <p><a href={profile.github} target="_blank" rel="noreferrer">github.com/sntk-76</a></p>
+          <p><a href={profile.kaggle} target="_blank" rel="noreferrer">kaggle.com/sinatavakoli</a></p>
+        </article>
+
+        <article class="card side-card">
+          <h2>Profile Focus</h2>
+          <p>
+            This page is a broad portfolio view of the same technical foundation presented in the
+            application resume.
+          </p>
+          <div class="focus-list">
+            <span>Software systems</span>
+            <span>Data workflows</span>
+            <span>Analytical reporting</span>
+            <span>Applied AI</span>
+            <span>Cloud-oriented delivery</span>
+          </div>
+        </article>
+      </aside>
+
+      <div class="resume-main">
+        <section>
+          <h2>Professional Experience</h2>
+          <Timeline items={experiences} />
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <Timeline items={education} />
+        </section>
+
+        <section>
+          <h2>Skills</h2>
+          <div class="skill-blocks">
+            {
+              skillGroups.map((group) => (
+                <article>
+                  <h3>{group.title}</h3>
+                  <ul class="tag-list">
+                    {group.skills.map((skill) => (
+                      <li class="tag">{skill}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-bottom: 42px;
+  }
+
+  .resume-grid {
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    gap: 34px;
+    align-items: start;
+  }
+
+  .resume-side {
+    display: grid;
+    gap: 18px;
+    position: sticky;
+    top: 96px;
+  }
+
+  .side-card {
+    padding: 22px;
+  }
+
+  .side-card h2,
+  .resume-main h2 {
+    margin: 0 0 16px;
+    font-size: 1.35rem;
+  }
+
+  .side-card p {
+    margin: 0 0 10px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .side-card a {
+    color: var(--accent-dark);
+    font-weight: 750;
+  }
+
+  .focus-list {
+    display: grid;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .focus-list span {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px;
+    background: #f8faf7;
+    color: #313d36;
+    font-weight: 750;
+  }
+
+  .resume-main {
+    display: grid;
+    gap: 44px;
+  }
+
+  .resume-main section {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 26px;
+    background: #fff;
+  }
+
+  .skill-blocks {
+    display: grid;
+    gap: 22px;
+  }
+
+  .skill-blocks h3 {
+    margin: 0 0 10px;
+  }
+
+  @media (max-width: 900px) {
+    .resume-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .resume-side {
+      position: static;
+    }
+  }
+</style>

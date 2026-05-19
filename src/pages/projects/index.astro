@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const categories = ['All', ...Array.from(new Set(projects.map((project) => project.data.category)))];
+---
+
+<BaseLayout
+  title="Projects | Sina Tavakoli"
+  description="Project case studies by Sina Tavakoli across software systems, data workflows, analytics, applied AI, forecasting, NLP, and cloud-oriented delivery."
+>
+  <section class="section page-hero">
+    <div class="container">
+      <p class="eyebrow">Projects</p>
+      <h1 class="section-title">Full technical case studies.</h1>
+      <p class="section-lede">
+        Each project is framed as a technical case study: what problem it addresses, how it was built,
+        what tools were used, what decisions mattered, and how the work connects software, data,
+        analysis, or applied AI.
+      </p>
+      <div class="category-row" aria-label="Project categories">
+        {categories.map((category) => <span>{category}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container grid grid-2">
+      {
+        projects.map((project) => (
+          <ProjectCard
+            title={project.data.title}
+            summary={project.data.summary}
+            category={project.data.category}
+            coverImage={project.data.coverImage}
+            href={`/projects/${project.id}`}
+            techStack={project.data.techStack}
+            githubUrl={project.data.githubUrl}
+            showTitle={false}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding-bottom: 40px;
+  }
+
+  .category-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .category-row span {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: #fff;
+    color: #425047;
+    font-size: 0.88rem;
+    font-weight: 750;
+  }
+</style>

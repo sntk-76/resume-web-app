@@ -1,0 +1,50 @@
+---
+import { profile } from '../data/profile';
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-links">
+      <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+      <a href={profile.kaggle} target="_blank" rel="noreferrer">Kaggle</a>
+      <a href={`mailto:${profile.email}`}>Email</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+    background: #eef2ed;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    color: #4b5750;
+    font-size: 0.92rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 14px;
+    font-weight: 750;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-dark);
+  }
+
+  @media (max-width: 760px) {
+    .footer-inner {
+      align-items: flex-end;
+      flex-direction: column;
+    }
+  }
+</style>

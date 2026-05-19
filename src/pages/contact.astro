@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { profile } from '../data/profile';
+---
+
+<BaseLayout
+  title="Contact | Sina Tavakoli"
+  description="Contact Sina Tavakoli through email, LinkedIn, GitHub, or Kaggle."
+>
+  <section class="section contact-hero">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+      <h1 class="section-title">Let us make the next conversation easy.</h1>
+      <p class="section-lede">
+          For opportunities in software, backend systems, data, analytics, data science, or applied AI,
+          email is the most direct path. LinkedIn, GitHub, and Kaggle provide additional project and
+          profile context.
+        </p>
+        <div class="button-row">
+          <a class="btn" href={`mailto:${profile.email}`}>Send Email</a>
+          <a class="btn secondary" href={profile.linkedin} target="_blank" rel="noreferrer">Open LinkedIn</a>
+        </div>
+      </div>
+      <aside class="contact-card card">
+        <h2>{profile.name}</h2>
+        <p>{profile.role}</p>
+        <dl>
+          <div>
+            <dt>Email</dt>
+            <dd><a href={`mailto:${profile.email}`}>{profile.email}</a></dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>{profile.location}</dd>
+          </div>
+          <div>
+            <dt>GitHub</dt>
+            <dd><a href={profile.github} target="_blank" rel="noreferrer">github.com/sntk-76</a></dd>
+          </div>
+          <div>
+            <dt>Kaggle</dt>
+            <dd><a href={profile.kaggle} target="_blank" rel="noreferrer">kaggle.com/sinatavakoli</a></dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    min-height: 68vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 42px;
+    align-items: start;
+  }
+
+  .contact-card {
+    padding: 28px;
+  }
+
+  .contact-card h2 {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+  }
+
+  .contact-card p {
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  dl {
+    display: grid;
+    gap: 18px;
+    margin: 0;
+  }
+
+  dt {
+    margin-bottom: 4px;
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    margin: 0;
+    color: #3b463f;
+    line-height: 1.45;
+  }
+
+  dd a {
+    color: var(--accent-dark);
+    font-weight: 780;
+  }
+
+  @media (max-width: 860px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

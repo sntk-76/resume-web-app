@@ -1,0 +1,141 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<BaseLayout title={`${project.data.title} | Sina Tavakoli`} description={project.data.summary}>
+  <article>
+    <section class="project-hero">
+      <div class="container project-hero-grid">
+        <div>
+          <a class="back-link" href="/projects">Back to projects</a>
+          <p class="eyebrow">{project.data.category}</p>
+          <h1>{project.data.title}</h1>
+          <p class="section-lede">{project.data.summary}</p>
+          <div class="button-row">
+            {project.data.githubUrl && <a class="btn" href={project.data.githubUrl} target="_blank" rel="noreferrer">GitHub</a>}
+            {project.data.demoUrl && <a class="btn secondary" href={project.data.demoUrl} target="_blank" rel="noreferrer">Live / Dashboard</a>}
+          </div>
+        </div>
+        <img src={project.data.coverImage} alt={`${project.data.title} cover`} />
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container detail-grid">
+        <aside class="project-aside">
+          <article class="card aside-card">
+            <h2>Tech Stack</h2>
+            <ul class="tag-list">
+              {project.data.techStack.map((tech) => <li class="tag">{tech}</li>)}
+            </ul>
+          </article>
+          <article class="card aside-card">
+            <h2>Impact</h2>
+            <ul class="impact-list">
+              {project.data.impact.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        </aside>
+        <div class="prose content-card card">
+          <Content />
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .project-hero {
+    padding: 58px 0 48px;
+    border-bottom: 1px solid var(--line);
+    background: #eef2ed;
+  }
+
+  .project-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    gap: 38px;
+    align-items: center;
+  }
+
+  .back-link {
+    display: inline-flex;
+    margin-bottom: 24px;
+    color: var(--accent-dark);
+    font-weight: 800;
+  }
+
+  h1 {
+    margin: 12px 0 18px;
+    font-size: clamp(2.6rem, 6vw, 5.2rem);
+    line-height: 0.98;
+  }
+
+  .project-hero img {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    object-fit: contain;
+    box-shadow: 0 24px 60px rgba(25, 37, 31, 0.14);
+  }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .project-aside {
+    display: grid;
+    gap: 18px;
+    position: sticky;
+    top: 96px;
+  }
+
+  .aside-card,
+  .content-card {
+    padding: 24px;
+  }
+
+  .aside-card h2 {
+    margin: 0 0 14px;
+    font-size: 1.15rem;
+  }
+
+  .impact-list {
+    margin: 0;
+    padding-left: 1.05rem;
+    color: #38433c;
+    line-height: 1.6;
+  }
+
+  .impact-list li + li {
+    margin-top: 10px;
+  }
+
+  @media (max-width: 920px) {
+    .project-hero-grid,
+    .detail-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-aside {
+      position: static;
+    }
+  }
+</style>

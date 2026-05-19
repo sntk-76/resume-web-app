@@ -1,0 +1,312 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Timeline from '../components/Timeline.astro';
+import { education, expertise, experiences, profile, skillGroups } from '../data/profile';
+
+const projects = Array.from(
+  new Map(
+    (await getCollection('projects'))
+  .filter((project) => project.data.featured)
+      .map((project) => [project.id, project])
+  ).values()
+).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Portfolio / Resume / Project Archive</p>
+        <h1>{profile.name}</h1>
+        <p class="hero-role">{profile.role}</p>
+        <p class="hero-summary">{profile.summary}</p>
+        <div class="button-row">
+          <a class="btn" href="/projects">View Projects</a>
+          <a class="btn secondary" href="/resume">Open Resume</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Professional snapshot">
+        <img src="/images/profile/profile.jpg" alt="Sina Tavakoli profile portrait" />
+        <div>
+          <p class="panel-label">Current focus</p>
+          <p>Practical technical systems that combine software, data, analytics, automation, and applied AI.</p>
+        </div>
+        <div class="profile-links">
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={profile.kaggle} target="_blank" rel="noreferrer">Kaggle</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="grid grid-3">
+        {
+          expertise.map((item) => (
+            <article class="expertise-card card">
+              <h2>{item.title}</h2>
+              <p>{item.text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="eyebrow">Selected Work</p>
+      <h2 class="section-title">Projects with technical depth.</h2>
+      <p class="section-lede">
+        A balanced portfolio of applied systems, data products, analytical workflows, AI experiments,
+        cloud-oriented delivery, and user-facing technical tools.
+      </p>
+      <div class="grid grid-2 project-grid">
+        {
+          projects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              summary={project.data.summary}
+              category={project.data.category}
+              coverImage={project.data.coverImage}
+              href={`/projects/${project.id}`}
+              techStack={project.data.techStack}
+              githubUrl={project.data.githubUrl}
+              showTitle={false}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section muted-band">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Resume</p>
+        <h2 class="section-title">A profile across software, data, and AI.</h2>
+        <p class="section-lede">
+          The resume page presents the common technical foundation behind the role-aligned resumes:
+          engineering judgment, data fluency, analytical thinking, applied AI work, and reliable delivery.
+        </p>
+        <div class="button-row">
+          <a class="btn" href="/resume">Read Resume</a>
+          <a class="btn secondary" href={`mailto:${profile.email}`}>Contact</a>
+        </div>
+      </div>
+      <div class="resume-preview card">
+        <Timeline items={experiences.slice(0, 3)} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Skills</p>
+      <h2 class="section-title">Tools used to connect systems and evidence.</h2>
+      <div class="skills-grid">
+        {
+          skillGroups.map((group) => (
+            <article>
+              <h3>{group.title}</h3>
+              <ul class="tag-list">
+                {group.skills.map((skill) => (
+                  <li class="tag">{skill}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight muted-band">
+    <div class="container education-strip">
+      <div>
+        <p class="eyebrow">Education</p>
+        <h2>Academic foundation</h2>
+      </div>
+      <Timeline items={education} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 76px 0 44px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 12px 0 0;
+    max-width: 760px;
+    font-size: clamp(3.4rem, 8vw, 6.8rem);
+    line-height: 0.94;
+    letter-spacing: 0;
+  }
+
+  .hero-role {
+    margin: 18px 0 0;
+    color: var(--accent-dark);
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
+    font-weight: 800;
+  }
+
+  .hero-summary {
+    max-width: 720px;
+    margin: 18px 0 26px;
+    color: #3e4b43;
+    font-size: 1.15rem;
+    line-height: 1.78;
+  }
+
+  .hero-panel {
+    display: grid;
+    gap: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: 0 22px 60px rgba(25, 37, 31, 0.09);
+  }
+
+  .hero-panel img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .panel-label {
+    margin: 0 0 6px;
+    color: var(--accent-dark);
+    font-size: 0.78rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-panel p:not(.panel-label) {
+    margin: 0;
+    color: #3d4841;
+    line-height: 1.6;
+  }
+
+  .profile-links {
+    display: flex;
+    gap: 10px;
+  }
+
+  .profile-links a {
+    flex: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+
+  .profile-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent-dark);
+  }
+
+  .expertise-card {
+    min-height: 220px;
+    padding: 24px;
+  }
+
+  .expertise-card h2 {
+    margin: 0 0 12px;
+    font-size: 1.32rem;
+  }
+
+  .expertise-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .project-grid {
+    margin-top: 34px;
+  }
+
+  .muted-band {
+    border-block: 1px solid var(--line);
+    background: #eef2ed;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: 38px;
+    align-items: start;
+  }
+
+  .resume-preview {
+    padding: 24px;
+    background: #fff;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+  }
+
+  .skills-grid h3 {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+  }
+
+  .education-strip {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+  }
+
+  .education-strip h2 {
+    margin: 8px 0 0;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 960px) {
+    .hero-grid,
+    .split,
+    .education-strip {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-panel {
+      max-width: 420px;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 620px) {
+    .hero {
+      padding-top: 46px;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
