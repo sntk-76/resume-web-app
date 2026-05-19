@@ -1,4 +1,6 @@
 ---
+import { sitePath } from '../utils/paths';
+
 interface Props {
   title: string;
   summary: string;
@@ -14,8 +16,8 @@ const { title, summary, category, coverImage, href, techStack, githubUrl, showTi
 ---
 
 <article class="project-card card">
-  <a class="project-image" href={href} aria-label={`Read ${title} case study`}>
-    <img src={coverImage} alt={`${title} project cover`} loading="lazy" />
+  <a class="project-image" href={sitePath(href)} aria-label={`Read ${title} case study`}>
+    <img src={sitePath(coverImage)} alt={`${title} project cover`} loading="lazy" />
   </a>
   <div class="project-body">
     <p class="project-category">{category}</p>
@@ -25,7 +27,7 @@ const { title, summary, category, coverImage, href, techStack, githubUrl, showTi
       {techStack.slice(0, 5).map((tech) => <li class="tag">{tech}</li>)}
     </ul>
     <div class="project-actions">
-      <a class="text-link" href={href}>Read case study</a>
+      <a class="text-link" href={sitePath(href)}>Read case study</a>
       {githubUrl && <a class="text-link" href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>}
     </div>
   </div>

@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { sitePath } from '../../utils/paths';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -19,7 +20,7 @@ const { Content } = await render(project);
     <section class="project-hero">
       <div class="container project-hero-grid">
         <div>
-          <a class="back-link" href="/projects">Back to projects</a>
+          <a class="back-link" href={sitePath('/projects')}>Back to projects</a>
           <p class="eyebrow">{project.data.category}</p>
           <h1>{project.data.title}</h1>
           <p class="section-lede">{project.data.summary}</p>
@@ -28,7 +29,7 @@ const { Content } = await render(project);
             {project.data.demoUrl && <a class="btn secondary" href={project.data.demoUrl} target="_blank" rel="noreferrer">Live / Dashboard</a>}
           </div>
         </div>
-        <img src={project.data.coverImage} alt={`${project.data.title} cover`} />
+        <img src={sitePath(project.data.coverImage)} alt={`${project.data.title} cover`} />
       </div>
     </section>
 

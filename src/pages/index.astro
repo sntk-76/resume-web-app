@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import Timeline from '../components/Timeline.astro';
 import { education, expertise, experiences, profile, skillGroups } from '../data/profile';
+import { sitePath } from '../utils/paths';
 
 const projects = Array.from(
   new Map(
@@ -23,12 +24,12 @@ const projects = Array.from(
         <p class="hero-role">{profile.role}</p>
         <p class="hero-summary">{profile.summary}</p>
         <div class="button-row">
-          <a class="btn" href="/projects">View Projects</a>
-          <a class="btn secondary" href="/resume">Open Resume</a>
+          <a class="btn" href={sitePath('/projects')}>View Projects</a>
+          <a class="btn secondary" href={sitePath('/resume')}>Open Resume</a>
         </div>
       </div>
       <aside class="hero-panel" aria-label="Professional snapshot">
-        <img src="/images/profile/profile.jpg" alt="Sina Tavakoli profile portrait" />
+        <img src={sitePath('/images/profile/profile.jpg')} alt="Sina Tavakoli profile portrait" />
         <div>
           <p class="panel-label">Current focus</p>
           <p>Practical technical systems that combine software, data, analytics, automation, and applied AI.</p>
@@ -94,7 +95,7 @@ const projects = Array.from(
           engineering judgment, data fluency, analytical thinking, applied AI work, and reliable delivery.
         </p>
         <div class="button-row">
-          <a class="btn" href="/resume">Read Resume</a>
+          <a class="btn" href={sitePath('/resume')}>Read Resume</a>
           <a class="btn secondary" href={`mailto:${profile.email}`}>Contact</a>
         </div>
       </div>

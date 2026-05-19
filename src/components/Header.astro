@@ -1,5 +1,6 @@
 ---
 import { profile } from '../data/profile';
+import { sitePath } from '../utils/paths';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -12,14 +13,14 @@ const navItems = [
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label={`${profile.name} home`}>
+    <a class="brand" href={sitePath('/')} aria-label={`${profile.name} home`}>
       <span class="brand-mark">ST</span>
       <span>{profile.name}</span>
     </a>
     <nav class="nav" aria-label="Primary navigation">
       {
         navItems.map((item) => (
-          <a href={item.href} class={Astro.url.pathname === item.href ? 'active' : ''}>
+          <a href={sitePath(item.href)} class={Astro.url.pathname.endsWith(item.href) ? 'active' : ''}>
             {item.label}
           </a>
         ))
