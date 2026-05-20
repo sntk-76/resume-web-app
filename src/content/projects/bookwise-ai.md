@@ -4,7 +4,6 @@ category: "AI Product"
 summary: "Semantic recommendation application that turns natural-language reading intent into embeddings, retrieves relevant books, presents results in Streamlit, and logs feedback for improvement."
 coverImage: "/images/projects/bookwise-ai-cover.png"
 githubUrl: "https://github.com/sntk-76/bookwise-ai"
-demoUrl: "https://bookwise-ai-recommendation.streamlit.app/"
 featured: true
 techStack:
   - Python

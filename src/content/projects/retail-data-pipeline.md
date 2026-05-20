@@ -4,7 +4,6 @@ category: "Data Product"
 summary: "Cloud-based retail analytics workflow that moves raw transaction data through storage, orchestration, transformation, validation, warehouse delivery, and business reporting."
 coverImage: "/images/projects/retail-data-pipeline-cover.png"
 githubUrl: "https://github.com/sntk-76/Retail-Data-Pipeline"
-demoUrl: "https://lookerstudio.google.com/reporting/32142238-71f8-4c7c-8dc2-45038440d426"
 featured: true
 techStack:
   - Terraform
