@@ -7,6 +7,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/sina-tavakoli-b25ba6224/',
   github: 'https://github.com/sntk-76',
   kaggle: 'https://www.kaggle.com/sinatavakoli',
+  botverio: 'https://botverio.com/',
   summary:
     'Cross-functional technical profile spanning software systems, data workflows, analytics, applied machine learning, and AI-enabled products. I build practical systems that connect reliable engineering, structured data, and evidence-driven decision making.',
 };
@@ -52,6 +53,19 @@ export const skillGroups = [
 export const experiences = [
   {
     period: '2025 - Current',
+    title: 'Founder / Software Developer',
+    organization: 'Botverio',
+    location: 'Remote',
+    details: [
+      'Founded and developed Botverio, a business website and product platform for ready-made Telegram bots and custom bot development services.',
+      'Built the platform across React, Strapi, PostgreSQL-oriented content modeling, VPS deployment, Nginx, HTTPS, and production release workflows.',
+      'Designed bot catalog, service pages, lead-capture flows, content structures, and operational setup connecting product positioning with practical delivery.',
+    ],
+    linkLabel: 'Open Botverio',
+    linkUrl: 'https://botverio.com/',
+  },
+  {
+    period: '2025 - Current',
     title: 'Software Engineer',
     organization: 'Logbot',
     location: 'Padova, Italy',
@@ -72,7 +86,7 @@ export const experiences = [
   },
   {
     period: '2023 - 2024',
-    title: 'Intership',
+    title: 'Internship',
     organization: 'Universita degli Studi di Padova',
     location: 'Padova, Italy',
     details: [
