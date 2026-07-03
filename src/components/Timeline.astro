@@ -17,6 +17,10 @@ interface Props {
 }
 
 const { items } = Astro.props;
+
+function metaText(item: Item) {
+  return [item.organization || item.school, item.location].filter(Boolean).join(' - ');
+}
 ---
 
 <div class="timeline">
@@ -26,9 +30,7 @@ const { items } = Astro.props;
         <div class="period">{item.period}</div>
         <div class="timeline-content">
           <h3>{item.title || item.degree}</h3>
-          <p class="meta">
-            {item.organization || item.school} · {item.location}
-          </p>
+          <p class="meta">{metaText(item)}</p>
           {item.detail && <p>{item.detail}</p>}
           {item.linkUrl && (
             <a class="timeline-link" href={item.linkUrl} target="_blank" rel="noreferrer">

@@ -53,9 +53,9 @@ export const skillGroups = [
 export const experiences = [
   {
     period: '2025 - Current',
-    title: 'Founder / Software Developer',
+    title: 'Founder',
     organization: 'Botverio',
-    location: 'Remote',
+    location: '',
     details: [
       'Founded and developed Botverio, a business website and product platform for ready-made Telegram bots and custom bot development services.',
       'Built the platform across React, Strapi, PostgreSQL-oriented content modeling, VPS deployment, Nginx, HTTPS, and production release workflows.',

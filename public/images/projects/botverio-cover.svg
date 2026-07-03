@@ -1,35 +1,43 @@
 <svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Botverio website cover</title>
-  <desc id="desc">Stylized product website preview for Botverio, showing a bot catalog and automation chat interface.</desc>
+  <title id="title">Botverio project cover</title>
+  <desc id="desc">Clean Botverio project cover showing a compact bot catalog and chat automation panel.</desc>
   <rect width="1200" height="600" fill="#F7F8F4"/>
-  <rect x="70" y="62" width="1060" height="476" rx="28" fill="#FFFFFF" stroke="#D9E0DB" stroke-width="4"/>
-  <rect x="70" y="62" width="1060" height="72" rx="28" fill="#17201B"/>
-  <circle cx="118" cy="98" r="10" fill="#EF6A5B"/>
-  <circle cx="150" cy="98" r="10" fill="#E7B84B"/>
-  <circle cx="182" cy="98" r="10" fill="#37B77A"/>
-  <text x="228" y="106" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">botverio.com</text>
-  <rect x="112" y="172" width="454" height="300" rx="20" fill="#EAF3EF" stroke="#C8D5CF" stroke-width="3"/>
-  <text x="148" y="232" fill="#134E4A" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="800">Ready-made Telegram bots</text>
-  <text x="148" y="278" fill="#344039" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">Botverio</text>
-  <text x="148" y="324" fill="#4E5B54" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600">Automation products and custom bot development for practical business workflows.</text>
-  <rect x="148" y="382" width="152" height="48" rx="12" fill="#17201B"/>
-  <text x="184" y="414" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">Explore bots</text>
-  <rect x="316" y="382" width="162" height="48" rx="12" fill="#FFFFFF" stroke="#134E4A" stroke-width="3"/>
-  <text x="350" y="414" fill="#134E4A" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">Request custom</text>
-  <rect x="622" y="172" width="190" height="132" rx="18" fill="#FFFFFF" stroke="#D9E0DB" stroke-width="3"/>
-  <circle cx="660" cy="215" r="20" fill="#0F766E"/>
-  <path d="M650 216L657 223L671 207" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="690" y="220" fill="#17201B" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Sales Bot</text>
-  <text x="650" y="264" fill="#5D6962" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600">Lead capture and order flows.</text>
-  <rect x="842" y="172" width="190" height="132" rx="18" fill="#FFFFFF" stroke="#D9E0DB" stroke-width="3"/>
-  <circle cx="880" cy="215" r="20" fill="#235789"/>
-  <path d="M870 216L877 223L891 207" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="910" y="220" fill="#17201B" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Support Bot</text>
-  <text x="870" y="264" fill="#5D6962" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600">Customer service automation.</text>
-  <rect x="622" y="340" width="410" height="132" rx="18" fill="#F4F7F3" stroke="#C8D5CF" stroke-width="3"/>
-  <rect x="656" y="374" width="206" height="32" rx="16" fill="#FFFFFF"/>
-  <text x="676" y="397" fill="#344039" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">I need a booking bot</text>
-  <rect x="746" y="422" width="252" height="32" rx="16" fill="#0F766E"/>
-  <text x="766" y="445" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700">Botverio can build it.</text>
-  <path d="M1090 164C1054 190 1042 238 1066 280C1093 326 1085 374 1038 420" stroke="#B8892F" stroke-width="8" stroke-linecap="round" stroke-dasharray="2 24"/>
+  <rect x="90" y="74" width="1020" height="452" rx="8" fill="#FFFFFF" stroke="#D9E0DB" stroke-width="3"/>
+  <rect x="90" y="74" width="1020" height="66" rx="8" fill="#17201B"/>
+  <rect x="90" y="124" width="1020" height="16" fill="#17201B"/>
+  <circle cx="128" cy="107" r="8" fill="#EF6A5B"/>
+  <circle cx="156" cy="107" r="8" fill="#E7B84B"/>
+  <circle cx="184" cy="107" r="8" fill="#37B77A"/>
+  <text x="224" y="115" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">Botverio</text>
+  <rect x="874" y="94" width="150" height="28" rx="6" fill="#0F766E"/>
+  <text x="906" y="114" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">Live product</text>
+
+  <rect x="134" y="182" width="382" height="280" rx="8" fill="#EEF2ED" stroke="#D9E0DB" stroke-width="2"/>
+  <text x="168" y="232" fill="#134E4A" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="850">Telegram bot platform</text>
+  <text x="168" y="278" fill="#17201B" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">Botverio</text>
+  <rect x="168" y="318" width="260" height="12" rx="6" fill="#C8D5CF"/>
+  <rect x="168" y="344" width="300" height="12" rx="6" fill="#D9E0DB"/>
+  <rect x="168" y="390" width="132" height="42" rx="8" fill="#17201B"/>
+  <rect x="318" y="390" width="132" height="42" rx="8" fill="#FFFFFF" stroke="#134E4A" stroke-width="2"/>
+
+  <rect x="562" y="182" width="214" height="132" rx="8" fill="#FFFFFF" stroke="#D9E0DB" stroke-width="2"/>
+  <circle cx="610" cy="232" r="22" fill="#0F766E"/>
+  <path d="M600 233L607 240L621 224" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="650" y="214" width="84" height="12" rx="6" fill="#17201B"/>
+  <rect x="650" y="240" width="92" height="10" rx="5" fill="#D9E0DB"/>
+  <rect x="650" y="260" width="70" height="10" rx="5" fill="#D9E0DB"/>
+
+  <rect x="814" y="182" width="214" height="132" rx="8" fill="#FFFFFF" stroke="#D9E0DB" stroke-width="2"/>
+  <circle cx="862" cy="232" r="22" fill="#235789"/>
+  <path d="M852 233L859 240L873 224" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="902" y="214" width="94" height="12" rx="6" fill="#17201B"/>
+  <rect x="902" y="240" width="86" height="10" rx="5" fill="#D9E0DB"/>
+  <rect x="902" y="260" width="64" height="10" rx="5" fill="#D9E0DB"/>
+
+  <rect x="562" y="350" width="466" height="112" rx="8" fill="#F4F7F3" stroke="#C8D5CF" stroke-width="2"/>
+  <rect x="596" y="382" width="168" height="24" rx="12" fill="#FFFFFF"/>
+  <rect x="794" y="414" width="200" height="24" rx="12" fill="#0F766E"/>
+  <circle cx="604" cy="438" r="5" fill="#B8892F"/>
+  <circle cx="624" cy="438" r="5" fill="#B8892F"/>
+  <circle cx="644" cy="438" r="5" fill="#B8892F"/>
 </svg>
