@@ -4,6 +4,7 @@ category: "Applied AI System"
 summary: "End-to-end weather intelligence application combining data retrieval, feature engineering, sequence modeling, experiment tracking, Streamlit delivery, LLM summaries, and cloud-ready infrastructure."
 coverImage: "/images/projects/ai-weather-predictor-cover.png"
 githubUrl: "https://github.com/sntk-76/AI-weather-predictor"
+demoUrl: "https://botverio.com/weather/"
 featured: true
 techStack:
   - Python
