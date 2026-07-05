@@ -38,6 +38,7 @@ const categories = ['All', ...Array.from(new Set(projects.map((project) => proje
             href={`/projects/${project.id}`}
             techStack={project.data.techStack}
             githubUrl={project.data.githubUrl}
+            demoUrl={project.data.demoUrl}
             showTitle={false}
           />
         ))

@@ -74,6 +74,8 @@ export const experiences = [
       'Designed modular service-layer utilities for wallet flows, coupon redemption, credit consumption, usage estimation, scheduled processing, validation, and consistent transactional behavior.',
       'Worked across TypeScript, Node.js, PostgreSQL, Strapi, REST routes, OpenAPI documentation, Stripe workflows, Balena integration, notifications, and data-driven runtime configuration.',
     ],
+    linkLabel: 'Open Logbot IoT Platform',
+    linkUrl: 'https://solutions.logbot.cloud/LogbotplatformIOT/',
   },
   {
     period: '2024 - 2025',

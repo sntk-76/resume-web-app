@@ -512,14 +512,16 @@ Example frontmatter:
 title: "AI Weather Predictor"
 slug: "ai-weather-predictor"
 category: "Machine Learning / MLOps"
-summary: "A machine learning project for weather prediction with experiment tracking and deployment-oriented structure."
+summary: "A custom-trained weather forecasting product with sequence modeling, evaluation, and live deployment."
 techStack:
   - Python
-  - scikit-learn
+  - TensorFlow
+  - Keras
   - MLflow
   - Terraform
-  - Docker
+  - GCP
 githubUrl: "https://github.com/sntk-76/AI-weather-predictor"
+demoUrl: "https://botverio.com/weather/"
 coverImage: "/images/projects/ai-weather-predictor-cover.webp"
 featured: true
 ---

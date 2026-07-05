@@ -1,7 +1,7 @@
 ---
 title: "Bookwise AI"
 category: "AI Product"
-summary: "Semantic recommendation application that turns natural-language reading intent into embeddings, retrieves relevant books, presents results in Streamlit, and logs feedback for improvement."
+summary: "Semantic recommendation product with an expanded 7,000+ book catalog, stronger embeddings, richer metadata, improved ranking, and a live deployed search experience."
 coverImage: "/images/projects/bookwise-ai-cover.png"
 githubUrl: "https://github.com/sntk-76/bookwise-ai"
 demoUrl: "https://botverio.com/bookwise/"
@@ -16,8 +16,8 @@ techStack:
   - Google Sheets API
 impact:
   - "Uses semantic retrieval instead of keyword-only matching."
-  - "Connects data preparation, embedding generation, product UI, and feedback logging."
-  - "Shows how applied AI can be packaged into a usable recommendation workflow."
+  - "Expands recommendation quality with a broader catalog and stronger embedding model."
+  - "Connects data preparation, embedding generation, ranking, product UI, and feedback logging."
 order: 5
 ---
 
@@ -25,7 +25,7 @@ order: 5
 
 Bookwise AI is an end-to-end recommendation application that lets users describe the kind of book they want in natural language and returns semantically relevant titles. Instead of relying only on keyword matching, the system embeds both user intent and enriched book descriptions, then ranks candidates by semantic similarity.
 
-The project combines dataset cleaning, metadata enrichment, embedding generation, vector-based retrieval, Streamlit delivery, feedback logging, data artifact orchestration, and cloud-ready infrastructure.
+The updated version combines dataset cleaning, metadata enrichment, catalog expansion, stronger embedding generation, vector-based retrieval, live app delivery, feedback logging, data artifact orchestration, and cloud-ready infrastructure.
 
 ## Problem
 
@@ -33,14 +33,15 @@ Book discovery is often open-ended. A user may describe mood, theme, style, or m
 
 ## Solution
 
-The system cleans and enriches a book catalog, generates Sentence-BERT embeddings for book descriptions, embeds the user's query with the same model, and ranks the catalog through cosine similarity. The Streamlit interface displays recommended books with similarity scores, cover images, descriptions, and external search links.
+The system cleans and enriches a book catalog, generates sentence-transformer embeddings for book descriptions, embeds the user's query with the same model, and ranks the catalog through semantic similarity with improved search text and filtering. The app displays recommended books with similarity scores, cover images, descriptions, and external search links.
 
 ## Technical Highlights
 
-- Natural-language semantic search with `sentence-transformers/all-MiniLM-L6-v2`.
+- Natural-language semantic search with `sentence-transformers/all-MiniLM-L12-v2`.
+- Expanded recommendation catalog to 7,000+ books with broader source coverage.
 - Precomputed embedding matrix for efficient recommendation.
-- Google Books metadata enrichment for stronger descriptions and book context.
-- Streamlit UI for recommendation delivery.
+- Metadata enrichment and search-text construction for stronger semantic context.
+- Live web interface for recommendation delivery.
 - Google Sheets feedback logging through service-account credentials.
 - Airflow DAGs for raw, cleaned, enriched, and embedding artifact uploads.
 - Terraform resources for Google Cloud Storage and BigQuery datasets.

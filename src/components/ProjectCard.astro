@@ -9,10 +9,11 @@ interface Props {
   href: string;
   techStack: string[];
   githubUrl?: string;
+  demoUrl?: string;
   showTitle?: boolean;
 }
 
-const { title, summary, category, coverImage, href, techStack, githubUrl, showTitle = true } = Astro.props;
+const { title, summary, category, coverImage, href, techStack, githubUrl, demoUrl, showTitle = true } = Astro.props;
 ---
 
 <article class="project-card card">
@@ -29,6 +30,7 @@ const { title, summary, category, coverImage, href, techStack, githubUrl, showTi
     <div class="project-actions">
       <a class="text-link" href={sitePath(href)}>Read case study</a>
       {githubUrl && <a class="text-link" href={githubUrl} target="_blank" rel="noreferrer">GitHub</a>}
+      {demoUrl && <a class="text-link" href={demoUrl} target="_blank" rel="noreferrer">Live</a>}
     </div>
   </div>
 </article>
